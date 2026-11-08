@@ -1,0 +1,30 @@
+{
+  "experiment": "Seeded synthetic salience-targeted lookup, NOT a real-world agent benchmark",
+  "seed": 2026,
+  "trials": 50,
+  "events_per_trial": 80,
+  "memory_slot_budget": 16,
+  "baseline": "FIFO recency, last K events",
+  "treatment": "priority-based offline selection plus lexical recall",
+  "baseline_successes": 13,
+  "dream_successes": 50,
+  "baseline_success_rate": 0.26,
+  "dream_success_rate": 1.0,
+  "counterfactual_fixture": {
+    "scenario": "decimal_sum",
+    "original_action": "binary_float",
+    "proposed_action": "decimal_arithmetic",
+    "cases": 6,
+    "baseline_pass": 3,
+    "candidate_pass": 6,
+    "improved": true,
+    "rule": "Use decimal_arithmetic for exact decimal-valued monetary summation in this sandbox.",
+    "scope": "Only the registered decimal_sum fixtures; validate separately in production."
+  },
+  "limitations": [
+    "Critical items are assigned higher importance by construction.",
+    "One target query per trial; no natural-language ambiguity.",
+    "No language model, user study, independent external validation or statistical generalization.",
+    "Fixture tests establish correctness only on the defined decimal_sum cases."
+  ]
+}

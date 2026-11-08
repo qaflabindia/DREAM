@@ -1,0 +1,16 @@
+digraph DREAM {
+  graph [rankdir=TB, bgcolor="white", margin=0.15, pad=0.25, nodesep=0.32, ranksep=0.40, splines=polyline, fontname="DejaVu Sans"];
+  node [shape=box, fontname="DejaVu Sans", fontsize=12, style="rounded,filled", fillcolor="#F4F6F8", color="#B8C0C9", fontcolor="#182330", penwidth=1.4, margin="0.15,0.10"];
+  edge [color="#64748B", arrowsize=0.7, penwidth=1.2];
+  agent [label="ACTIVE AGENT\nActions / observations / outcomes", fillcolor="#EAF0F6"];
+  evidence [label="EPISODIC EVIDENCE STORE\nSource IDs / expiry / integrity digests", fillcolor="#FFFFFF"];
+  replay [label="REPLAY SELECTOR\nBounded candidate selection and conflict search"];
+  hypothesis [label="HYPOTHESIS QUARANTINE\nPossible explanation / alternative action", fillcolor="#F9F2E8"];
+  verify [label="INDEPENDENT TEST AUTHORITY\nAllowlisted fixtures / sealed future evaluation", fillcolor="#FFF1EE", color="#B95B4D"];
+  govern [label="GOVERNANCE GATE\nSupport / validity / sensitivity / revocation", fillcolor="#FCEDEA", color="#9D3444"];
+  memory [label="RETRIEVABLE MEMORY\nFacts / time-bounded test-scoped procedures", fillcolor="#E9F3ED"];
+  read [label="READ-TIME VERIFICATION\nAll evidence still active and digest-valid", fillcolor="#E9F3ED"];
+  agent -> evidence -> replay -> hypothesis -> verify -> govern -> memory -> read;
+  read -> agent [label="eligible context", constraint=false, fontname="DejaVu Sans", fontsize=10];
+  evidence -> govern [style=dashed, label="source trace", fontname="DejaVu Sans", fontsize=10];
+}

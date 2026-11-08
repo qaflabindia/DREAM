@@ -1,0 +1,7 @@
+{
+  "python": "3.13.5",
+  "sqlite": "3.46.1",
+  "package": "dreamlab-research 0.2.0",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "network": "not required"
+}

@@ -1,0 +1,674 @@
+{
+  "name": "paired_synthetic_ranking_ablation",
+  "seed": 2026,
+  "n_trials": 80,
+  "n_events": 80,
+  "memory_slots": 16,
+  "estimand": "target recall on synthetic labelled items, not future-task uplift",
+  "rates": {
+    "recency": {
+      "hits": 16,
+      "trials": 80,
+      "rate": 0.2
+    },
+    "oracle_importance": {
+      "hits": 80,
+      "trials": 80,
+      "rate": 1.0
+    },
+    "equal_importance": {
+      "hits": 16,
+      "trials": 80,
+      "rate": 0.2
+    },
+    "random_importance": {
+      "hits": 14,
+      "trials": 80,
+      "rate": 0.175
+    }
+  },
+  "interpretation": "Oracle-importance labels encode the target; this is an information advantage, not learned salience.",
+  "falsification": "If importance is uninformative, selection offers no reliable benefit over recency.",
+  "raw_trials": [
+    {
+      "trial": 0,
+      "target_index": 27,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 1,
+      "target_index": 6,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 2,
+      "target_index": 41,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 3,
+      "target_index": 66,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": true
+    },
+    {
+      "trial": 4,
+      "target_index": 7,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 5,
+      "target_index": 45,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 6,
+      "target_index": 69,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 7,
+      "target_index": 11,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 8,
+      "target_index": 59,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 9,
+      "target_index": 49,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 10,
+      "target_index": 37,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 11,
+      "target_index": 61,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 12,
+      "target_index": 44,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 13,
+      "target_index": 76,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": true
+    },
+    {
+      "trial": 14,
+      "target_index": 26,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 15,
+      "target_index": 55,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 16,
+      "target_index": 48,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 17,
+      "target_index": 8,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 18,
+      "target_index": 50,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 19,
+      "target_index": 73,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 20,
+      "target_index": 72,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": true
+    },
+    {
+      "trial": 21,
+      "target_index": 42,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 22,
+      "target_index": 60,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 23,
+      "target_index": 68,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 24,
+      "target_index": 3,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 25,
+      "target_index": 79,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 26,
+      "target_index": 17,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 27,
+      "target_index": 39,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 28,
+      "target_index": 63,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 29,
+      "target_index": 2,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 30,
+      "target_index": 54,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 31,
+      "target_index": 38,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 32,
+      "target_index": 33,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 33,
+      "target_index": 23,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 34,
+      "target_index": 1,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 35,
+      "target_index": 19,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 36,
+      "target_index": 77,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 37,
+      "target_index": 9,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 38,
+      "target_index": 29,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 39,
+      "target_index": 46,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 40,
+      "target_index": 18,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 41,
+      "target_index": 34,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 42,
+      "target_index": 35,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 43,
+      "target_index": 5,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 44,
+      "target_index": 21,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 45,
+      "target_index": 4,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 46,
+      "target_index": 78,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 47,
+      "target_index": 32,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 48,
+      "target_index": 47,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 49,
+      "target_index": 24,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 50,
+      "target_index": 51,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 51,
+      "target_index": 22,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 52,
+      "target_index": 16,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 53,
+      "target_index": 25,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 54,
+      "target_index": 75,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 55,
+      "target_index": 20,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 56,
+      "target_index": 58,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 57,
+      "target_index": 31,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 58,
+      "target_index": 43,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 59,
+      "target_index": 57,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 60,
+      "target_index": 52,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 61,
+      "target_index": 67,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 62,
+      "target_index": 74,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 63,
+      "target_index": 12,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 64,
+      "target_index": 36,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 65,
+      "target_index": 14,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 66,
+      "target_index": 10,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 67,
+      "target_index": 0,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 68,
+      "target_index": 30,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 69,
+      "target_index": 56,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 70,
+      "target_index": 62,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 71,
+      "target_index": 70,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 72,
+      "target_index": 53,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 73,
+      "target_index": 71,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 74,
+      "target_index": 28,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    },
+    {
+      "trial": 75,
+      "target_index": 13,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 76,
+      "target_index": 65,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 77,
+      "target_index": 64,
+      "recency": true,
+      "oracle_importance": true,
+      "equal_importance": true,
+      "random_importance": false
+    },
+    {
+      "trial": 78,
+      "target_index": 40,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": true
+    },
+    {
+      "trial": 79,
+      "target_index": 15,
+      "recency": false,
+      "oracle_importance": true,
+      "equal_importance": false,
+      "random_importance": false
+    }
+  ]
+}

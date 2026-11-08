@@ -1,0 +1,38 @@
+test_expired_evidence_revoked_at_read_even_before_dream (test_engine.AdditionalSafetyTests.test_expired_evidence_revoked_at_read_even_before_dream) ... ok
+test_ingestion_immediately_revokes_prior_promotion (test_engine.AdditionalSafetyTests.test_ingestion_immediately_revokes_prior_promotion) ... ok
+test_untrusted_outcome_never_triggers_counterfactual (test_engine.AdditionalSafetyTests.test_untrusted_outcome_never_triggers_counterfactual) ... ok
+test_conflict_revokes_existing_memory (test_engine.DreamEngineTests.test_conflict_revokes_existing_memory) ... ok
+test_conflict_still_detected_when_low_rank_evidence_excluded (test_engine.DreamEngineTests.test_conflict_still_detected_when_low_rank_evidence_excluded) ... ok
+test_consent_is_mandatory (test_engine.DreamEngineTests.test_consent_is_mandatory) ... ok
+test_counterfactual_is_sandbox_verified (test_engine.DreamEngineTests.test_counterfactual_is_sandbox_verified) ... ok
+test_dream_idempotence_and_audit (test_engine.DreamEngineTests.test_dream_idempotence_and_audit) ... ok
+test_expiry (test_engine.DreamEngineTests.test_expiry) ... ok
+test_prompt_injection_is_data (test_engine.DreamEngineTests.test_prompt_injection_is_data) ... ok
+test_purge (test_engine.DreamEngineTests.test_purge) ... ok
+test_sandbox_score (test_engine.DreamEngineTests.test_sandbox_score) ... ok
+test_sensitivity_access (test_engine.DreamEngineTests.test_sensitivity_access) ... ok
+test_tenant_isolation (test_engine.DreamEngineTests.test_tenant_isolation) ... ok
+test_unrecognized_counterfactual_cannot_execute (test_engine.DreamEngineTests.test_unrecognized_counterfactual_cannot_execute) ... ok
+test_unvalidated_observation_not_promoted (test_engine.DreamEngineTests.test_unvalidated_observation_not_promoted) ... ok
+test_verified_fact_recalled_with_provenance (test_engine.DreamEngineTests.test_verified_fact_recalled_with_provenance) ... ok
+test_local_endpoint_rejects_remote_urls (test_engine.LocalModelHypothesisTests.test_local_endpoint_rejects_remote_urls) ... ok
+test_model_requires_consent_and_cannot_promote_speculation (test_engine.LocalModelHypothesisTests.test_model_requires_consent_and_cannot_promote_speculation) ... ok
+test_unknown_evidence_ids_are_rejected (test_engine.LocalModelHypothesisTests.test_unknown_evidence_ids_are_rejected) ... ok
+test_expiry_normalizes_offset (test_engine.TimeValidationTests.test_expiry_normalizes_offset) ... ok
+test_expiry_requires_offset (test_engine.TimeValidationTests.test_expiry_requires_offset) ... ok
+test_benign_expiry_is_not_an_integrity_failure (test_governance.GovernanceTests.test_benign_expiry_is_not_an_integrity_failure) ... ok
+test_expired_procedure_revoked_at_read_and_next_dream (test_governance.GovernanceTests.test_expired_procedure_revoked_at_read_and_next_dream) ... ok
+test_inspection_endpoint_respects_clearance (test_governance.GovernanceTests.test_inspection_endpoint_respects_clearance) ... ok
+test_tampered_approved_fact_is_not_retrieved (test_governance.GovernanceTests.test_tampered_approved_fact_is_not_retrieved) ... ok
+test_tampered_importance_is_rejected (test_governance.GovernanceTests.test_tampered_importance_is_rejected) ... ok
+test_tampered_source_class_is_rejected (test_governance.GovernanceTests.test_tampered_source_class_is_rejected) ... ok
+test_tampered_value_is_rejected_at_dream (test_governance.GovernanceTests.test_tampered_value_is_rejected_at_dream) ... ok
+test_untrusted_contradiction_not_promoted_or_authoritative_veto (test_governance.GovernanceTests.test_untrusted_contradiction_not_promoted_or_authoritative_veto) ... ok
+test_untrusted_expiry_does_not_revoke_validated_fact (test_governance.GovernanceTests.test_untrusted_expiry_does_not_revoke_validated_fact) ... ok
+test_untrusted_priority_flood_cannot_starve_validated (test_governance.GovernanceTests.test_untrusted_priority_flood_cannot_starve_validated) ... ok
+test_validated_conflict_blocks_promotion (test_governance.GovernanceTests.test_validated_conflict_blocks_promotion) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.510s
+
+OK

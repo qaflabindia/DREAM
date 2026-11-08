@@ -1,0 +1,53 @@
+{
+  "document": "Research Gate Document",
+  "author": "Lakshminarasimhan Santhanam",
+  "date": "2026-11-08",
+  "unit_tests": {
+    "passed": 33,
+    "failed": 0
+  },
+  "paired_synthetic_ranking": {
+    "recency": {
+      "hits": 16,
+      "trials": 80,
+      "rate": 0.2
+    },
+    "oracle_importance": {
+      "hits": 80,
+      "trials": 80,
+      "rate": 1.0
+    },
+    "equal_importance": {
+      "hits": 16,
+      "trials": 80,
+      "rate": 0.2
+    },
+    "random_importance": {
+      "hits": 14,
+      "trials": 80,
+      "rate": 0.175
+    }
+  },
+  "registered_arithmetic_fixture": {
+    "scenario": "decimal_sum",
+    "original_action": "binary_float",
+    "proposed_action": "decimal_arithmetic",
+    "cases": 6,
+    "baseline_pass": 3,
+    "candidate_pass": 6,
+    "improved": true,
+    "rule": "Use decimal_arithmetic for exact decimal-valued monetary summation in this sandbox.",
+    "scope": "Only the registered decimal_sum fixtures; validate separately in production."
+  },
+  "environment": {
+    "python": "3.13.5",
+    "sqlite": "3.46.1",
+    "package": "dreamlab-research 0.2.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "network": "not required"
+  },
+  "external_benchmark": {
+    "status": "not run"
+  },
+  "interpretation": "synthetic engineering evidence only; not autonomous learning"
+}
