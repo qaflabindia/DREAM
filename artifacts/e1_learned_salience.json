@@ -1,0 +1,455 @@
+{
+  "design": {
+    "n_events": 80,
+    "targets_per_stream": 8,
+    "memory_slots": 16,
+    "seeds": 5,
+    "test_streams_per_seed": 40,
+    "ci": "95% percentile bootstrap over test streams"
+  },
+  "signal_sweep_ntrain50": {
+    "0.0": {
+      "recency": {
+        "mean": 0.22,
+        "ci95": [
+          0.2013,
+          0.2394
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.2175,
+        "ci95": [
+          0.1975,
+          0.2375
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.1988,
+        "ci95": [
+          0.1819,
+          0.2156
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.22,
+        "ci95": [
+          0.2006,
+          0.2412
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": -0.0213,
+        "ci95": [
+          -0.0494,
+          0.005
+        ]
+      }
+    },
+    "0.5": {
+      "recency": {
+        "mean": 0.2331,
+        "ci95": [
+          0.2131,
+          0.2531
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.21,
+        "ci95": [
+          0.1913,
+          0.2288
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.3631,
+        "ci95": [
+          0.3406,
+          0.3844
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.3919,
+        "ci95": [
+          0.3681,
+          0.415
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.13,
+        "ci95": [
+          0.1025,
+          0.1569
+        ]
+      }
+    },
+    "1.0": {
+      "recency": {
+        "mean": 0.2669,
+        "ci95": [
+          0.2462,
+          0.2881
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.1944,
+        "ci95": [
+          0.1769,
+          0.2125
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.5825,
+        "ci95": [
+          0.56,
+          0.6031
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.5975,
+        "ci95": [
+          0.5744,
+          0.6206
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.3156,
+        "ci95": [
+          0.2875,
+          0.345
+        ]
+      }
+    },
+    "2.0": {
+      "recency": {
+        "mean": 0.3006,
+        "ci95": [
+          0.2787,
+          0.3225
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.1994,
+        "ci95": [
+          0.18,
+          0.2181
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.7894,
+        "ci95": [
+          0.7706,
+          0.8081
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.8025,
+        "ci95": [
+          0.7844,
+          0.8206
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.4888,
+        "ci95": [
+          0.4606,
+          0.5162
+        ]
+      }
+    }
+  },
+  "learning_curve_s1": {
+    "1": {
+      "recency": {
+        "mean": 0.2881,
+        "ci95": [
+          0.2662,
+          0.3094
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.2075,
+        "ci95": [
+          0.1875,
+          0.2275
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.3412,
+        "ci95": [
+          0.3194,
+          0.3631
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.5956,
+        "ci95": [
+          0.5725,
+          0.6181
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.0531,
+        "ci95": [
+          0.0225,
+          0.0838
+        ]
+      }
+    },
+    "5": {
+      "recency": {
+        "mean": 0.2762,
+        "ci95": [
+          0.2575,
+          0.295
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.2213,
+        "ci95": [
+          0.2013,
+          0.2406
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.4219,
+        "ci95": [
+          0.3962,
+          0.4469
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.5806,
+        "ci95": [
+          0.5569,
+          0.605
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.1456,
+        "ci95": [
+          0.1156,
+          0.1762
+        ]
+      }
+    },
+    "20": {
+      "recency": {
+        "mean": 0.2656,
+        "ci95": [
+          0.2456,
+          0.2869
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.2006,
+        "ci95": [
+          0.1819,
+          0.2194
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.5563,
+        "ci95": [
+          0.5312,
+          0.5819
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.6106,
+        "ci95": [
+          0.5887,
+          0.6331
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.2906,
+        "ci95": [
+          0.2606,
+          0.3219
+        ]
+      }
+    },
+    "100": {
+      "recency": {
+        "mean": 0.2656,
+        "ci95": [
+          0.2456,
+          0.2863
+        ],
+        "n_streams": 200
+      },
+      "random": {
+        "mean": 0.195,
+        "ci95": [
+          0.1762,
+          0.2137
+        ],
+        "n_streams": 200
+      },
+      "learned": {
+        "mean": 0.5737,
+        "ci95": [
+          0.5513,
+          0.5988
+        ],
+        "n_streams": 200
+      },
+      "bayes": {
+        "mean": 0.5863,
+        "ci95": [
+          0.5637,
+          0.6112
+        ],
+        "n_streams": 200
+      },
+      "oracle_label": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_streams": 200
+      },
+      "learned_minus_recency": {
+        "mean": 0.3081,
+        "ci95": [
+          0.2812,
+          0.3369
+        ]
+      }
+    }
+  },
+  "shift_s1_ntrain50": {
+    "recency": {
+      "mean": 0.2831,
+      "ci95": [
+        0.2625,
+        0.3031
+      ],
+      "n_streams": 200
+    },
+    "random": {
+      "mean": 0.1944,
+      "ci95": [
+        0.1775,
+        0.2125
+      ],
+      "n_streams": 200
+    },
+    "learned": {
+      "mean": 0.3019,
+      "ci95": [
+        0.2787,
+        0.3269
+      ],
+      "n_streams": 200
+    },
+    "bayes": {
+      "mean": 0.5869,
+      "ci95": [
+        0.565,
+        0.6106
+      ],
+      "n_streams": 200
+    },
+    "oracle_label": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_streams": 200
+    },
+    "learned_minus_recency": {
+      "mean": 0.0187,
+      "ci95": [
+        -0.0106,
+        0.0475
+      ]
+    }
+  }
+}

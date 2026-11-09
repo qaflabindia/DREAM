@@ -1,0 +1,22 @@
+{
+  "traces": 500,
+  "steps_per_trace": 60,
+  "engine": {
+    "recalls": 82521,
+    "served": 65186,
+    "violations": 0,
+    "fail_closed_recalls": 5076,
+    "fail_closed_dreams": 1167,
+    "tampers": 840,
+    "deletions": 889
+  },
+  "mutant_no_read_revalidation": {
+    "recalls": 82521,
+    "served": 92546,
+    "violations": 24685,
+    "fail_closed_recalls": 0,
+    "fail_closed_dreams": 1167,
+    "tampers": 840,
+    "deletions": 889
+  }
+}

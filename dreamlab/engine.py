@@ -72,7 +72,22 @@ class Event:
 
 
 class DreamEngine:
-    def __init__(self, db_path: str | Path):
+    def __init__(self, db_path: str | Path, *, min_verified_sources: int = 1,
+                 contest_policy: str = "any"):
+        """min_verified_sources: distinct validated source_ids that must agree
+        before a fact is labelled 'verified'. With fewer, a validated value is
+        served as 'reported'. Source identifiers are caller-supplied and are
+        not authenticated, so this raises attack cost but is not proof."""
+        if min_verified_sources < 1:
+            raise ValueError("min_verified_sources must be >= 1")
+        if contest_policy not in {"any", "dominance"}:
+            raise ValueError("contest_policy must be 'any' or 'dominance'")
+        self.min_verified_sources = min_verified_sources
+        # 'any': any non-untrusted disagreement contests the key (withheld).
+        # 'dominance': a value whose (best trust rank, distinct sources at that
+        # rank) strictly exceeds every alternative stays servable; the
+        # disagreement is kept in metadata. Ties are still contested.
+        self.contest_policy = contest_policy
         self.db_path = str(db_path)
         self.db = sqlite3.connect(self.db_path, timeout=20, isolation_level=None)
         self.db.row_factory = sqlite3.Row
@@ -274,6 +289,21 @@ class DreamEngine:
                 # separately traceable, without gaining a revocation veto.
                 evidence_ids = [r["id"] for r in active_group]
                 importance = max(r["importance"] for r in active_group)
+                winner = None
+                if len(grouped) > 1 and self.contest_policy == "dominance":
+                    rank = {"validated": 3, "observed": 2, "self_report": 1, "untrusted": 0}
+                    def strength(rows):
+                        best = max(rank[r["trust"]] for r in rows)
+                        return (best, len({r["source_id"] for r in rows if rank[r["trust"]] == best}))
+                    ordered = sorted(grouped, key=lambda v: strength(grouped[v]), reverse=True)
+                    if strength(grouped[ordered[0]]) > strength(grouped[ordered[1]]):
+                        winner = ordered[0]
+                if winner is not None:
+                    low_trust_disagreements = sorted(set(low_trust_disagreements) | (set(grouped) - {winner}))
+                    ranked_group = [r for r in ranked_group if " ".join(r["value"].lower().split()) == winner]
+                    active_group = ranked_group
+                    evidence_ids = [r["id"] for r in active_group]
+                    grouped = {winner: active_group}
                 if len(grouped) > 1:
                     status, confidence, val = "contested", 0.0, " | ".join(sorted(grouped))
                     contested += 1
@@ -283,9 +313,10 @@ class DreamEngine:
                 else:
                     val = active_group[0]["value"]
                     trusts = {r["trust"] for r in ranked_group}
-                    if "validated" in trusts:
+                    validated_sources = {r["source_id"] for r in ranked_group if r["trust"] == "validated"}
+                    if len(validated_sources) >= self.min_verified_sources:
                         status, confidence = "verified", 0.95
-                    elif "self_report" in trusts:
+                    elif validated_sources or "self_report" in trusts:
                         status, confidence = "reported", 0.65
                     else:
                         status, confidence = "pending", 0.35

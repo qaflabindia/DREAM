@@ -31,8 +31,15 @@ test_untrusted_contradiction_not_promoted_or_authoritative_veto (test_governance
 test_untrusted_expiry_does_not_revoke_validated_fact (test_governance.GovernanceTests.test_untrusted_expiry_does_not_revoke_validated_fact) ... ok
 test_untrusted_priority_flood_cannot_starve_validated (test_governance.GovernanceTests.test_untrusted_priority_flood_cannot_starve_validated) ... ok
 test_validated_conflict_blocks_promotion (test_governance.GovernanceTests.test_validated_conflict_blocks_promotion) ... ok
+test_corroboration_counts_distinct_sources_only (test_policies.PolicyTests.test_corroboration_counts_distinct_sources_only) ... ok
+test_corroboration_downgrades_single_source (test_policies.PolicyTests.test_corroboration_downgrades_single_source) ... ok
+test_default_policy_lets_observed_contradiction_withhold_fact (test_policies.PolicyTests.test_default_policy_lets_observed_contradiction_withhold_fact) ... ok
+test_default_single_validated_source_is_verified (test_policies.PolicyTests.test_default_single_validated_source_is_verified) ... ok
+test_dominance_keeps_stronger_value_and_records_disagreement (test_policies.PolicyTests.test_dominance_keeps_stronger_value_and_records_disagreement) ... ok
+test_dominance_ties_remain_contested (test_policies.PolicyTests.test_dominance_ties_remain_contested) ... ok
+test_invalid_policy_arguments_rejected (test_policies.PolicyTests.test_invalid_policy_arguments_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 33 tests in 0.510s
+Ran 40 tests in 0.306s
 
 OK

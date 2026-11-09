@@ -1,0 +1,221 @@
+{
+  "design": {
+    "true_facts": 200,
+    "poison_events_per_cell": 50,
+    "source_mix": "1/2/3 validated sources with weights 40/35/25",
+    "seed": 2026
+  },
+  "clean_coverage": {
+    "naive": {
+      "served": 1.0,
+      "verified": 0.0
+    },
+    "dream": {
+      "served": 1.0,
+      "verified": 1.0
+    },
+    "dream_corrob2": {
+      "served": 1.0,
+      "verified": 0.67
+    },
+    "dream_dominance": {
+      "served": 1.0,
+      "verified": 1.0
+    },
+    "dream_both": {
+      "served": 1.0,
+      "verified": 0.67
+    }
+  },
+  "attacks": {
+    "new_key|any|naive": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|untrusted|dream": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|untrusted|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|untrusted|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|untrusted|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|observed|dream": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|observed|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|observed|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|observed|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0
+    },
+    "new_key|self_report|dream": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|self_report|dream_corrob2": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|self_report|dream_dominance": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|self_report|dream_both": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|validated|dream": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "new_key|validated|dream_corrob2": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "new_key|validated|dream_dominance": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "new_key|validated|dream_both": {
+      "served": 1.0,
+      "authoritative": 0.0
+    },
+    "contradict|any|naive": {
+      "served": 1.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|untrusted|dream": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|untrusted|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|untrusted|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|untrusted|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|observed|dream": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|observed|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|observed|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|observed|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|self_report|dream": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|self_report|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|self_report|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|self_report|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.0
+    },
+    "contradict|validated|dream": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|validated|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "contradict|validated|dream_dominance": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.28
+    },
+    "contradict|validated|dream_both": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 0.28
+    },
+    "sybil_new|validated|dream": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "sybil_new|validated|dream_corrob2": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "sybil_new|validated|dream_dominance": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "sybil_new|validated|dream_both": {
+      "served": 1.0,
+      "authoritative": 1.0
+    },
+    "sybil_contra|validated|dream": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "sybil_contra|validated|dream_corrob2": {
+      "served": 0.0,
+      "authoritative": 0.0,
+      "true_value_suppressed": 1.0
+    },
+    "sybil_contra|validated|dream_dominance": {
+      "served": 0.44,
+      "authoritative": 0.44,
+      "true_value_suppressed": 0.78
+    },
+    "sybil_contra|validated|dream_both": {
+      "served": 0.44,
+      "authoritative": 0.44,
+      "true_value_suppressed": 0.78
+    }
+  }
+}
