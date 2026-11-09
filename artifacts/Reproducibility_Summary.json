@@ -1,53 +1,926 @@
 {
   "document": "Research Gate Document",
   "author": "Lakshminarasimhan Santhanam",
-  "date": "2026-11-08",
-  "unit_tests": {
-    "passed": 33,
-    "failed": 0
-  },
-  "paired_synthetic_ranking": {
-    "recency": {
-      "hits": 16,
-      "trials": 80,
-      "rate": 0.2
-    },
-    "oracle_importance": {
-      "hits": 80,
-      "trials": 80,
-      "rate": 1.0
-    },
-    "equal_importance": {
-      "hits": 16,
-      "trials": 80,
-      "rate": 0.2
-    },
-    "random_importance": {
-      "hits": 14,
-      "trials": 80,
-      "rate": 0.175
-    }
-  },
-  "registered_arithmetic_fixture": {
-    "scenario": "decimal_sum",
-    "original_action": "binary_float",
-    "proposed_action": "decimal_arithmetic",
-    "cases": 6,
-    "baseline_pass": 3,
-    "candidate_pass": 6,
-    "improved": true,
-    "rule": "Use decimal_arithmetic for exact decimal-valued monetary summation in this sandbox.",
-    "scope": "Only the registered decimal_sum fixtures; validate separately in production."
-  },
   "environment": {
-    "python": "3.13.5",
-    "sqlite": "3.46.1",
-    "package": "dreamlab-research 0.2.0",
-    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.13.18",
+    "sqlite": "3.53.1",
+    "package": "dreamlab-research 0.3.0",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
     "network": "not required"
   },
-  "external_benchmark": {
-    "status": "not run"
+  "unit_tests": {
+    "ran": 40,
+    "failed": 0
   },
-  "interpretation": "synthetic engineering evidence only; not autonomous learning"
+  "calibration_fixture": {
+    "rates": {
+      "recency": {
+        "hits": 16,
+        "trials": 80,
+        "rate": 0.2
+      },
+      "oracle_importance": {
+        "hits": 80,
+        "trials": 80,
+        "rate": 1.0
+      },
+      "equal_importance": {
+        "hits": 16,
+        "trials": 80,
+        "rate": 0.2
+      },
+      "random_importance": {
+        "hits": 14,
+        "trials": 80,
+        "rate": 0.175
+      }
+    },
+    "note": "equal_importance is identical to recency by construction (ties resolve newest-first)"
+  },
+  "e1_learned_salience": {
+    "signal_sweep": {
+      "0.0": {
+        "recency": {
+          "mean": 0.22,
+          "ci95": [
+            0.2013,
+            0.2394
+          ]
+        },
+        "random": {
+          "mean": 0.2175,
+          "ci95": [
+            0.1975,
+            0.2375
+          ]
+        },
+        "learned": {
+          "mean": 0.1988,
+          "ci95": [
+            0.1819,
+            0.2156
+          ]
+        },
+        "bayes": {
+          "mean": 0.22,
+          "ci95": [
+            0.2006,
+            0.2412
+          ]
+        },
+        "learned_minus_recency": {
+          "mean": -0.0213,
+          "ci95": [
+            -0.0494,
+            0.005
+          ]
+        }
+      },
+      "0.5": {
+        "recency": {
+          "mean": 0.2331,
+          "ci95": [
+            0.2131,
+            0.2531
+          ]
+        },
+        "random": {
+          "mean": 0.21,
+          "ci95": [
+            0.1913,
+            0.2288
+          ]
+        },
+        "learned": {
+          "mean": 0.3631,
+          "ci95": [
+            0.3406,
+            0.3844
+          ]
+        },
+        "bayes": {
+          "mean": 0.3919,
+          "ci95": [
+            0.3681,
+            0.415
+          ]
+        },
+        "learned_minus_recency": {
+          "mean": 0.13,
+          "ci95": [
+            0.1025,
+            0.1569
+          ]
+        }
+      },
+      "1.0": {
+        "recency": {
+          "mean": 0.2669,
+          "ci95": [
+            0.2462,
+            0.2881
+          ]
+        },
+        "random": {
+          "mean": 0.1944,
+          "ci95": [
+            0.1769,
+            0.2125
+          ]
+        },
+        "learned": {
+          "mean": 0.5825,
+          "ci95": [
+            0.56,
+            0.6031
+          ]
+        },
+        "bayes": {
+          "mean": 0.5975,
+          "ci95": [
+            0.5744,
+            0.6206
+          ]
+        },
+        "learned_minus_recency": {
+          "mean": 0.3156,
+          "ci95": [
+            0.2875,
+            0.345
+          ]
+        }
+      },
+      "2.0": {
+        "recency": {
+          "mean": 0.3006,
+          "ci95": [
+            0.2787,
+            0.3225
+          ]
+        },
+        "random": {
+          "mean": 0.1994,
+          "ci95": [
+            0.18,
+            0.2181
+          ]
+        },
+        "learned": {
+          "mean": 0.7894,
+          "ci95": [
+            0.7706,
+            0.8081
+          ]
+        },
+        "bayes": {
+          "mean": 0.8025,
+          "ci95": [
+            0.7844,
+            0.8206
+          ]
+        },
+        "learned_minus_recency": {
+          "mean": 0.4888,
+          "ci95": [
+            0.4606,
+            0.5162
+          ]
+        }
+      }
+    },
+    "distribution_shift": {
+      "recency": {
+        "mean": 0.2831,
+        "ci95": [
+          0.2625,
+          0.3031
+        ]
+      },
+      "learned": {
+        "mean": 0.3019,
+        "ci95": [
+          0.2787,
+          0.3269
+        ]
+      },
+      "bayes": {
+        "mean": 0.5869,
+        "ci95": [
+          0.565,
+          0.6106
+        ]
+      }
+    }
+  },
+  "e2_counterfactual_transfer": {
+    "exact_authority": {
+      "ntrain=1,eps=0.0": {
+        "base": {
+          "mean": 0.5457,
+          "ci95": [
+            0.4839,
+            0.6021
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.908,
+          "ci95": [
+            0.8863,
+            0.9273
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9283,
+          "ci95": [
+            0.9106,
+            0.9459
+          ]
+        },
+        "dream": {
+          "mean": 0.9048,
+          "ci95": [
+            0.8838,
+            0.9252
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": -0.0032,
+          "ci95": [
+            -0.0072,
+            0.0
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": -0.0236,
+          "ci95": [
+            -0.0395,
+            -0.0107
+          ]
+        },
+        "dream_evaluator_calls_mean": 20.9
+      },
+      "ntrain=1,eps=0.1": {
+        "base": {
+          "mean": 0.5498,
+          "ci95": [
+            0.4874,
+            0.6068
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.8213,
+          "ci95": [
+            0.778,
+            0.8606
+          ]
+        },
+        "reflection+": {
+          "mean": 0.8652,
+          "ci95": [
+            0.8273,
+            0.8986
+          ]
+        },
+        "dream": {
+          "mean": 0.8566,
+          "ci95": [
+            0.8201,
+            0.8885
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.0353,
+          "ci95": [
+            0.0104,
+            0.0645
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": -0.0086,
+          "ci95": [
+            -0.056,
+            0.0404
+          ]
+        },
+        "dream_evaluator_calls_mean": 19.2
+      },
+      "ntrain=1,eps=0.3": {
+        "base": {
+          "mean": 0.547,
+          "ci95": [
+            0.484,
+            0.6028
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.6921,
+          "ci95": [
+            0.6362,
+            0.746
+          ]
+        },
+        "reflection+": {
+          "mean": 0.7837,
+          "ci95": [
+            0.7375,
+            0.8247
+          ]
+        },
+        "dream": {
+          "mean": 0.7615,
+          "ci95": [
+            0.7121,
+            0.8072
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.0694,
+          "ci95": [
+            0.0346,
+            0.109
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": -0.0222,
+          "ci95": [
+            -0.0807,
+            0.0321
+          ]
+        },
+        "dream_evaluator_calls_mean": 15.7
+      },
+      "ntrain=3,eps=0.0": {
+        "base": {
+          "mean": 0.5452,
+          "ci95": [
+            0.4834,
+            0.6011
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9738,
+          "ci95": [
+            0.9622,
+            0.9836
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9688,
+          "ci95": [
+            0.9562,
+            0.98
+          ]
+        },
+        "dream": {
+          "mean": 0.9514,
+          "ci95": [
+            0.9363,
+            0.9649
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": -0.0224,
+          "ci95": [
+            -0.0339,
+            -0.0123
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": -0.0174,
+          "ci95": [
+            -0.0281,
+            -0.0079
+          ]
+        },
+        "dream_evaluator_calls_mean": 30.2
+      },
+      "ntrain=3,eps=0.1": {
+        "base": {
+          "mean": 0.5454,
+          "ci95": [
+            0.4826,
+            0.602
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9432,
+          "ci95": [
+            0.9181,
+            0.9638
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9152,
+          "ci95": [
+            0.8822,
+            0.9431
+          ]
+        },
+        "dream": {
+          "mean": 0.9528,
+          "ci95": [
+            0.9378,
+            0.9671
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.0096,
+          "ci95": [
+            -0.014,
+            0.0364
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": 0.0376,
+          "ci95": [
+            0.0092,
+            0.0707
+          ]
+        },
+        "dream_evaluator_calls_mean": 38.2
+      },
+      "ntrain=3,eps=0.3": {
+        "base": {
+          "mean": 0.5477,
+          "ci95": [
+            0.4858,
+            0.6031
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.832,
+          "ci95": [
+            0.787,
+            0.8744
+          ]
+        },
+        "reflection+": {
+          "mean": 0.7935,
+          "ci95": [
+            0.746,
+            0.8403
+          ]
+        },
+        "dream": {
+          "mean": 0.9211,
+          "ci95": [
+            0.8957,
+            0.9427
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.0891,
+          "ci95": [
+            0.0437,
+            0.1396
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": 0.1276,
+          "ci95": [
+            0.0737,
+            0.1803
+          ]
+        },
+        "dream_evaluator_calls_mean": 36.6
+      },
+      "ntrain=10,eps=0.0": {
+        "base": {
+          "mean": 0.5452,
+          "ci95": [
+            0.4827,
+            0.6019
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9993,
+          "ci95": [
+            0.9979,
+            1.0
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9937,
+          "ci95": [
+            0.9846,
+            1.0
+          ]
+        },
+        "dream": {
+          "mean": 0.9896,
+          "ci95": [
+            0.9833,
+            0.9951
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": -0.0097,
+          "ci95": [
+            -0.0159,
+            -0.0041
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": -0.0041,
+          "ci95": [
+            -0.0111,
+            0.0028
+          ]
+        },
+        "dream_evaluator_calls_mean": 40.0
+      },
+      "ntrain=10,eps=0.1": {
+        "base": {
+          "mean": 0.5466,
+          "ci95": [
+            0.4838,
+            0.6024
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9439,
+          "ci95": [
+            0.9131,
+            0.9704
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9644,
+          "ci95": [
+            0.943,
+            0.9824
+          ]
+        },
+        "dream": {
+          "mean": 0.9909,
+          "ci95": [
+            0.9834,
+            0.9969
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.0471,
+          "ci95": [
+            0.0199,
+            0.0796
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": 0.0266,
+          "ci95": [
+            0.0085,
+            0.0478
+          ]
+        },
+        "dream_evaluator_calls_mean": 60.9
+      },
+      "ntrain=10,eps=0.3": {
+        "base": {
+          "mean": 0.5454,
+          "ci95": [
+            0.4829,
+            0.602
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.8669,
+          "ci95": [
+            0.8216,
+            0.9081
+          ]
+        },
+        "reflection+": {
+          "mean": 0.8289,
+          "ci95": [
+            0.7816,
+            0.874
+          ]
+        },
+        "dream": {
+          "mean": 0.9822,
+          "ci95": [
+            0.9728,
+            0.99
+          ]
+        },
+        "dream_minus_retrieval+": {
+          "mean": 0.1153,
+          "ci95": [
+            0.0715,
+            0.1605
+          ]
+        },
+        "dream_minus_reflection+": {
+          "mean": 0.1533,
+          "ci95": [
+            0.1083,
+            0.204
+          ]
+        },
+        "dream_evaluator_calls_mean": 103.6
+      }
+    },
+    "authority_stress": {
+      "noisy": {
+        "base": {
+          "mean": 0.547,
+          "ci95": [
+            0.4849,
+            0.6038
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9529,
+          "ci95": [
+            0.9254,
+            0.9759
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9346,
+          "ci95": [
+            0.8999,
+            0.9636
+          ]
+        },
+        "dream": {
+          "mean": 0.9804,
+          "ci95": [
+            0.9719,
+            0.9885
+          ]
+        },
+        "dream_regression_rate": 0.0
+      },
+      "misspecified": {
+        "base": {
+          "mean": 0.5475,
+          "ci95": [
+            0.4843,
+            0.6048
+          ]
+        },
+        "retrieval+": {
+          "mean": 0.9559,
+          "ci95": [
+            0.9273,
+            0.9792
+          ]
+        },
+        "reflection+": {
+          "mean": 0.9215,
+          "ci95": [
+            0.8877,
+            0.9528
+          ]
+        },
+        "dream": {
+          "mean": 0.4149,
+          "ci95": [
+            0.3605,
+            0.4712
+          ]
+        },
+        "dream_regression_rate": 0.1333
+      }
+    }
+  },
+  "e3_poisoning": {
+    "clean_coverage": {
+      "naive": {
+        "served": 1.0,
+        "verified": 0.0
+      },
+      "dream": {
+        "served": 1.0,
+        "verified": 1.0
+      },
+      "dream_corrob2": {
+        "served": 1.0,
+        "verified": 0.67
+      },
+      "dream_dominance": {
+        "served": 1.0,
+        "verified": 1.0
+      },
+      "dream_both": {
+        "served": 1.0,
+        "verified": 0.67
+      }
+    },
+    "attacks": {
+      "new_key|any|naive": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|untrusted|dream": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|untrusted|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|untrusted|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|untrusted|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|observed|dream": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|observed|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|observed|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|observed|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0
+      },
+      "new_key|self_report|dream": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|self_report|dream_corrob2": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|self_report|dream_dominance": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|self_report|dream_both": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|validated|dream": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "new_key|validated|dream_corrob2": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "new_key|validated|dream_dominance": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "new_key|validated|dream_both": {
+        "served": 1.0,
+        "authoritative": 0.0
+      },
+      "contradict|any|naive": {
+        "served": 1.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|untrusted|dream": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|untrusted|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|untrusted|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|untrusted|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|observed|dream": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|observed|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|observed|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|observed|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|self_report|dream": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|self_report|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|self_report|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|self_report|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.0
+      },
+      "contradict|validated|dream": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|validated|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "contradict|validated|dream_dominance": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.28
+      },
+      "contradict|validated|dream_both": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 0.28
+      },
+      "sybil_new|validated|dream": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "sybil_new|validated|dream_corrob2": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "sybil_new|validated|dream_dominance": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "sybil_new|validated|dream_both": {
+        "served": 1.0,
+        "authoritative": 1.0
+      },
+      "sybil_contra|validated|dream": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "sybil_contra|validated|dream_corrob2": {
+        "served": 0.0,
+        "authoritative": 0.0,
+        "true_value_suppressed": 1.0
+      },
+      "sybil_contra|validated|dream_dominance": {
+        "served": 0.44,
+        "authoritative": 0.44,
+        "true_value_suppressed": 0.78
+      },
+      "sybil_contra|validated|dream_both": {
+        "served": 0.44,
+        "authoritative": 0.44,
+        "true_value_suppressed": 0.78
+      }
+    }
+  },
+  "e4_lifecycle_invariant": {
+    "traces": 500,
+    "steps_per_trace": 60,
+    "engine": {
+      "recalls": 82521,
+      "served": 65186,
+      "violations": 0,
+      "fail_closed_recalls": 5076,
+      "fail_closed_dreams": 1167,
+      "tampers": 840,
+      "deletions": 889
+    },
+    "mutant_no_read_revalidation": {
+      "recalls": 82521,
+      "served": 92546,
+      "violations": 24685,
+      "fail_closed_recalls": 0,
+      "fail_closed_dreams": 1167,
+      "tampers": 840,
+      "deletions": 889
+    }
+  },
+  "scope": "Controlled simulations and software tests only; no language-model agent, external benchmark or peer review."
 }

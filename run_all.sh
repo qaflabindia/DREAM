@@ -10,4 +10,5 @@ python -m experiments.poisoning --output artifacts/e3_poisoning.json
 python -m experiments.lifecycle_invariant --output artifacts/e4_lifecycle_invariant.json
 python -c "import json,platform,sqlite3;print(json.dumps({'python':platform.python_version(),'sqlite':sqlite3.sqlite_version,'package':'dreamlab-research 0.3.0','platform':platform.platform(),'network':'not required'},indent=2))" > artifacts/environment.json
 python figures/make_figures.py
+python -m experiments.summary
 sha256sum dreamlab/*.py experiments/*.py tests/*.py artifacts/*.json artifacts/unit_tests.txt figures/*.py > SHA256SUMS
